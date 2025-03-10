@@ -5,30 +5,35 @@ import java.util.Scanner;
 class Main {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Podaj liczbę: ");
-        int num = scan.nextInt();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Podaj rozmiar tablicy: ");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
 
 
-        if (isPrime(num)) {
-            System.out.println("Liczba " + num + " jest pierwsza.");
-        } else {
-            System.out.println("Liczba " + num + " nie jest pierwsza.");
+        System.out.println("Podaj " + n + " liczb calkowitych do tablicy:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
         }
+
+        int maxNumber = findMax(arr);
+        System.out.println("Najwieksza liczba w tablicy to: " + maxNumber);
     }
 
-    public static boolean isPrime(int num) {
-        if (num < 2) {
-            return false;
-        }
 
-        for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) {
-                return false;
+    public static int findMax(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
             }
         }
-        return true;
+        return max;
+
+
     }
+
 }
 
 
