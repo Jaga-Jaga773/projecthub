@@ -7,32 +7,37 @@ class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Podaj rozmiar tablicy: ");
-        int n = scanner.nextInt();
-        int[] arr = new int[n];
+
+        System.out.print("Введіть число: ");
+        int number = scanner.nextInt();
 
 
-        System.out.println("Podaj " + n + " liczb calkowitych do tablicy:");
-        for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextInt();
-        }
+        int result = factorial(number);
 
-        int maxNumber = findMax(arr);
-        System.out.println("Najwieksza liczba w tablicy to: " + maxNumber);
+
+        System.out.println("Факторіал числа " + number + " дорівнює: " + result);
+
+        scanner.close();
     }
 
 
-    public static int findMax(int[] arr) {
-        int max = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-            }
+    public static int factorial(int n) {
+        int result = 1;
+
+
+        for (int i = 1; i <= n; i++) {
+            result *= i;
         }
-        return max;
+
+        return result;
+
+
+
+
 
 
     }
+
 
 }
 
