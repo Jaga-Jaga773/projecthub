@@ -1,19 +1,21 @@
 package com.javadeveloper;
 
-import java.util.Scanner;
 
-class Main {
 
-    public  Main() {}
+ class Main {
+
 
     public static void main(String[] args) {
+        Disc.setVat(23.0);
 
-        Transport bmw = new Transport(200.5f,2000, "Black", new byte[] {0,0,0});
+        // Створення об'єкта диска
+        Disc disc = new Disc("IBM", 2048, 330.0);
 
-        Transport truck = new Transport(130f,5000,"White"  );
+        // Виведення інформації про диск
+        System.out.println(disc);
 
-
-
+        // Виведення ціни з ПДВ
+        System.out.println("Cena brutto: " + disc.getBruttoPrice() + " PLN");
 
     }
 
