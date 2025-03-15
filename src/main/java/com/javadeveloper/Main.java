@@ -6,16 +6,13 @@ package com.javadeveloper;
 
 
     public static void main(String[] args) {
-        Disc.setVat(23.0);
 
-        // Створення об'єкта диска
-        Disc disc = new Disc("IBM", 2048, 330.0);
+Ksiazka book = new Ksiazka(" JAva for you", " Herbert", 2020, 122, true);
+Ksiazka book1 = new Ksiazka("Drapiezcy", " Gabriel", 2000, 234, true);
 
-        // Виведення інформації про диск
-        System.out.println(disc);
+book.wyswietlInfo();
+book1.wyswietlInfo();
 
-        // Виведення ціни з ПДВ
-        System.out.println("Cena brutto: " + disc.getBruttoPrice() + " PLN");
 
     }
 
