@@ -7,13 +7,16 @@ package com.javadeveloper;
 
     public static void main(String[] args) {
 
-Ksiazka book = new Ksiazka(" JAva for you", " Herbert", 2020, 122, true);
-Ksiazka book1 = new Ksiazka("Drapiezcy", " Gabriel", 2000, 234, true);
-
-book.wyswietlInfo();
-book1.wyswietlInfo();
+        Student student = new Student("Jake", 18,85);
+        Student student1 = new Student("Jon", 23, 95);
 
 
+        student.displayInfo();
+        student1.displayInfo();
+
+
+        student.isExcellentStudent();
+        student1.isExcellentStudent();
     }
 
 
