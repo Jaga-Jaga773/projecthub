@@ -8,13 +8,11 @@ public class Pracownik {
     private double premia;
 
     public Pracownik(String imie, String nazwisko, double stawka, double godz, double premia) {
-
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.stawka = stawka;
         this.godz = godz;
         this.premia = premia;
-
     }
 
     public String getImie() {
@@ -37,28 +35,31 @@ public class Pracownik {
         this.premia = nowaPremia;
     }
 
-    public  void dajPodwyzke (double zwiekszenieStawki) {
-        this.godz = godz + zwiekszenieStawki;
+    public void dajPodwyzke(double zwiekszenieStawki) {
+        this.stawka += zwiekszenieStawki;
     }
 
-    public  boolean czyJestPremia () {
-        if (premia > 0) {
-            return true;
-        }else {
-            return  false;
-        }
+    public boolean czyJestPremia() {
+        return premia > 0;
+    }
+
+    // Metoda wiecejPracuje
+    public boolean wiecejPracuje(Pracownik innyPracownik) {
+        return this.godz > innyPracownik.godz;
+    }
+
+    public void wyswietl() {
+        System.out.println("Imie pracownika: " + imie);
+        System.out.println("Nazwisko pracownika: " + nazwisko);
+        System.out.println("Stawka godzinowa: " + stawka + " PLN");
+        System.out.println("Przepracowane godziny: " + godz);
+        System.out.println("Premia: " + premia + " PLN");
+        System.out.println("Podstawowe wynagrodzenie: " + obliczPodstawoweWynagrodzenie() + " PLN");
+        System.out.println("Pełne wynagrodzenie: " + obliczPelneWynagrodzenie() + " PLN");
     }
 
 
 
-
-    public void wyswietl () {
-        System.out.println("Imie pracownika " + imie);
-        System.out.println("Nazwisko pracownika: "  + nazwisko);
-        System.out.println("Stawka" + stawka);
-        System.out.println("Przepracowane godziny: ");
-        System.out.println("Premia: " + premia);
-    }
 
 
 
