@@ -7,16 +7,18 @@ package com.javadeveloper;
 
     public static void main(String[] args) {
 
-        Student student = new Student("Jake", 18,85);
-        Student student1 = new Student("Jon", 23, 95);
+        Prostokat prostokat = new Prostokat(4, 2);
+
+        System.out.println("Opis prostakata: ");
+        System.out.println("Dlugosc wynosi: " + prostokat.getDlugosc());
+        System.out.println("Szerokosc wynosi: " + prostokat.getSzerokosc());
+        System.out.println( "Pole wynosi: " + prostokat.poleProstokata());
+        System.out.println( "Obwod wynosi: " + prostokat.obwodProstakata());
+        System.out.println("Dlugosc wynosi: " + prostokat.dlugoscPrzekatnej());
 
 
-        student.displayInfo();
-        student1.displayInfo();
 
 
-        student.isExcellentStudent();
-        student1.isExcellentStudent();
     }
 
 
