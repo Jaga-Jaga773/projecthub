@@ -7,14 +7,21 @@ package com.javadeveloper;
 
     public static void main(String[] args) {
 
-        Prostokat prostokat = new Prostokat(4, 2);
+Samochod samochod = new Samochod("Toyota", "Corolla", 2015, 700, 4, 180, 140, 30, 5, "TYU4673");
+samochod.wyswietl();
 
-        System.out.println("Opis prostakata: ");
-        System.out.println("Dlugosc wynosi: " + prostokat.getDlugosc());
-        System.out.println("Szerokosc wynosi: " + prostokat.getSzerokosc());
-        System.out.println( "Pole wynosi: " + prostokat.poleProstokata());
-        System.out.println( "Obwod wynosi: " + prostokat.obwodProstakata());
-        System.out.println("Dlugosc wynosi: " + prostokat.dlugoscPrzekatnej());
+samochod.wykonajTuning(50);
+samochod.wyswietl();
+
+samochod.zmienNrRej("rt5789");
+samochod.wyswietl();
+
+samochod.jedz(120);
+samochod.wyswietl();
+
+samochod.przypiesz(4);
+samochod.wyswietl();
+
 
 
 
