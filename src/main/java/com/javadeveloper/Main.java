@@ -8,65 +8,90 @@ package com.javadeveloper;
     public static void main(String[] args) {
 
         //Zadanie1
-//Scanner scan = new Scanner(System.in);
-//double[] tablica = new double [10];
-//double suma = 0;
+//Scanner sc = new Scanner(System.in);
+//int[] tablica = new int[5];
+// int iloczyn = 1;
+//        System.out.println("Podaj 5 dowolnych elementow: ");
 //
-//        System.out.println("Podaj 10 liczb: ");
-//        for (int i = 0;  i < tablica.length; i++){
-//            System.out.print( (i + 1) + " liczba: " );
-//            tablica[i] = scan.nextInt();
-//            suma += tablica[i];
+//        for (int i = 0; i < tablica.length; i++){
+//            tablica[i] = sc.nextInt();
 //        }
-//        System.out.println("Sriednia arytmetyczna wynosi: " + (suma/10));
 //
 //
-//scan.close();
+//        for (int i = 0; i < tablica.length; i++){
+//         iloczyn *= tablica[i];
+//        }
+//
+//        System.out.println("Iloczyn wszystkich elementow wynosi: " + iloczyn);
+//
+//
+//sc.close();
 
-//Zadanie 2
-//        Scanner sc = new Scanner(System.in);
-//        int [] tablica = new int[8];
-//        System.out.println("Podaj 8 elementow z zakresu(-50-50): ");
+        //Zadanie 2
+
+//Scanner sc = new Scanner(System.in);
+//int [] tablica = new int[5];
+//        System.out.println("Podaj 5 liczb calkowitych: ");
+//        for (int i = 0; i < tablica.length; i++){
+//           tablica[i] = sc.nextInt();
 //
-//        for(int i = 0; i < tablica.length; i++) {
-//            System.out.print((i + 1) + " element: ");
+//        }
+//
+//        System.out.println("Tablica w odwrotnej kolejnosci: ");
+//        for (int i = tablica.length - 1;  i >= 0; i--){
+//            System.out.println(tablica[i]);
+//        }
+//
+//
+//        sc.close();
+
+
+        //Zadanie 3
+//Scanner sc = new Scanner(System.in);
+//int[] tablica = new int[10];
+//        System.out.println("Podaj 10 liczb calkowitych: ");
+//
+//        for(int i = 0; i < tablica.length; i++){
 //            tablica[i] = sc.nextInt();
 //
-//            if (tablica[i] < -50 || tablica[i] > 50) {
-//                System.out.println("Nie podales liczby z zakresu(-50-50)!");
-//                return;
-//
-//            }
 //        }
 //
 //        int max = tablica[0];
 //        int min = tablica[0];
-//        int maxIndex = 0;
-//        int minIndex = 0;
-//
-//for(int i = 1; i < tablica.length; i++){
-//    if(tablica[i] > max){
-//        max = tablica[i];
-//                maxIndex = i;
-//    }
-//
-//    if(tablica[i] < min){
-//        min = tablica[i];
-//        minIndex = i;
-//    }
-//
-//}
-//
-//        System.out.println("Najwiekszy element to: " + max + " Indeks elementa: " + maxIndex);
-//        System.out.println("Najmniejszy element to: " + min + "Indeks elementa: " + minIndex);
 //
 //
+//        for(int i = 0; i < tablica.length; i++) {
+//            if (max < tablica[i]) {
+//                max = tablica[i];
+//            }
+//        }
+//
+//        for(int i = 0; i < tablica.length; i++) {
+//            if (min > tablica[i])
+//                min = tablica[i];
+//        }
+//        System.out.println("Maksymalny element: " + max);
+//        System.out.println("Minimalny element :" + min);
+//
+//
+//sc.close();
 
+//Zadanie 4
 
-
-
-
-
+//     Scanner sc = new Scanner(System.in) ;
+//int[] tablica = new int[8];
+//        System.out.println("Podaj 8 liczb calkowitych: ");
+//int suma = 0;
+//        for(int i = 0; i < tablica.length; i++){
+//            tablica[i] = sc.nextInt();
+//            if( tablica[i] % 2 == 0){
+//                suma += tablica[i];
+//            }
+//
+//        }
+//        System.out.println("Suma parzystych  elementow wynosi: " + suma);
+//
+//sc.close();
 
 
 
