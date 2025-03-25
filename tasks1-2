@@ -1,0 +1,78 @@
+package com.javadeveloper;
+
+
+import java.util.Scanner;
+
+class Main {
+
+
+    public static void main(String[] args) {
+
+        //task 1
+//        Scanner sc = new Scanner(System.in);
+//        System.out.print("Подай кількість елементів: ");
+//        int elements = sc.nextInt();
+//      int[] nums = new int[elements];
+//
+//        System.out.println("Вхід:");
+//      for (int i = 0; i < nums.length; i++){
+//          nums[i] = sc.nextInt();
+//
+//      }
+//        System.out.println("Вихід:");
+//for (int i = nums.length-1; i >= 0; i--){
+//    System.out.println(nums[i]);
+//}
+//
+//
+//sc.close();
+
+//task 2
+       // Scanner sc = new Scanner(System.in);
+
+        // Введення розміру масивів
+//        System.out.print("Подайте кількість елементів у масивах: ");
+//        int size = sc.nextInt();
+//
+//        int[] arr1 = new int[size];
+//        int[] arr2 = new int[size];
+//        int[] mergedArray = new int[size * 2]; // Масив для об'єднання
+//
+//        // Введення першого масиву
+//        System.out.println("Введіть елементи першого масиву:");
+//        for (int i = 0; i < size; i++) {
+//            arr1[i] = sc.nextInt();
+//        }
+//
+//        // Введення другого масиву
+//        System.out.println("Введіть елементи другого масиву:");
+//        for (int i = 0; i < size; i++) {
+//            arr2[i] = sc.nextInt();
+//        }
+//
+//        // Об'єднання масивів почергово
+//        int index = 0;
+//        for (int i = 0; i < size; i++) {
+//            mergedArray[index++] = arr1[i]; // Додаємо елемент з arr1
+//            mergedArray[index++] = arr2[i]; // Додаємо елемент з arr2
+//        }
+//
+//        // Вивід результату
+//        System.out.print("Об'єднаний масив: ");
+//        for (int num : mergedArray) {
+//            System.out.print(num + " ");
+//        }
+//
+//        sc.close();
+//
+
+
+
+
+
+
+
+    }
+
+}
+
