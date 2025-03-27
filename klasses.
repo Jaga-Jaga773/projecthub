@@ -1,0 +1,170 @@
+package com.javadeveloper;
+
+import java.util.Scanner;
+
+
+public class TabliceMetodyPomocnicze {
+
+
+public  static  void wyswietlTab ( int[] tab) {
+    System.out.println("Tablica: ");
+    for( int el : tab){
+        System.out.println(el + " ");
+    }
+
+    System.out.println();
+
+}
+
+public static double obliczSrednia(int[] tab) {
+    if(tab.length == 0) return 0;
+    int suma = 0;
+    for (int i = 0; i < tab.length; i++){
+        suma += tab[i];
+    }
+  return (double)  suma/ tab.length;
+
+}
+
+public static void znajdzMinOrazIndex(int[] tab) {
+    if(tab.length == 0) {
+        System.out.println("Tablica jest pusta!");
+        return;
+    }
+  int indeks = 0;
+  int min = tab[0];
+  for(int i = 0; i < tab.length; i++){
+      if(min > tab[i]){
+          min = tab[i];
+          indeks = i;
+      }
+  }
+    System.out.println("Minimalny ekement wynosi: " + min + ", a indeks wynosi: " + indeks);
+}
+
+public static  void znajdzMaksOrazIndeks(int[] tab) {
+    if(tab.length == 0) return ;
+    int indeks = 0;
+    int max = tab[0];
+    for (int i = 0; i < tab.length; i++){
+        if(max < tab[i]){
+            max = tab[i];
+            indeks = i;
+        }
+    }
+    System.out.println("Maksymalny ekement wynosi: " + max + ", a indeks wynosi: " + indeks);
+
+}
+
+
+
+
+//public static int  znajdzIndeksElementu(int[] tab) {
+//
+//   if(tab.length == 0) return 0;
+//    int indeks = 0;
+//
+//   for (int i = 0; i < tab.length; i++){
+//      if(element == tab[i]){
+//          indeks = i;
+//      } else
+//           indeks = -1;
+//    }
+//
+//    return  indeks;
+//}
+
+
+
+public static void obliczIlePlusMinusZer(int[] tab){
+    int dodatnie = 0;
+    int ujemne = 0;
+    int zera = 0;
+    if(tab.length == 0) {
+        System.out.println("Liczba elementow wynosi: " + zera);
+    }
+
+    for(int i = 0; i < tab.length; i++){
+        if(tab[i] > 0) dodatnie++;
+        if(tab[i] < 0) ujemne++;
+        if(tab[i] == 0) zera++;
+
+    }
+
+    System.out.println("Liczba dodatnich: " + dodatnie + ", liczba ujemnych:" + ujemne + ", liczba zer: " + zera);
+
+}
+
+
+
+public  static void zerujParzyste (int[] tab) {
+    if(tab.length == 0) System.out.println("Tablica wynosi 0!");
+    int liczbaWyzerowanych = 0;
+
+    for (int i = 0; i < tab.length; i++){
+        if(tab[i] % 2 == 0)
+            liczbaWyzerowanych++;
+    }
+    System.out.println("Liczba wyzerowanych wynosi: " + liczbaWyzerowanych);
+}
+
+
+
+}
+
+class Main {
+
+
+    public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+int dlugosc;
+
+do {
+    System.out.println("Podaj dlugosc tablicy wieksza od 0: ");
+    while(!sc.hasNextInt()) {
+        System.out.println("Podales bledne dane.Musi byc liczba calkowita!");
+        sc.next();
+    }
+
+dlugosc = sc.nextInt();
+
+} while (dlugosc <= 0);
+
+int[] tablica = new int[dlugosc];
+        System.out.println("Podaj " + dlugosc + " liczb calkowitych.");
+
+for (int i = 0; i < tablica.length; i++){
+    while(!sc.hasNextInt()){
+        System.out.println("Blad.Musisz podac liczbe calkowita!");
+        sc.next();
+    }
+    tablica[i] = sc.nextInt();
+}
+
+sc.close();
+
+//TabliceMetodyPomocnicze.wyswietlTab(tablica);
+//        System.out.println("Sriednia wynosi: " + TabliceMetodyPomocnicze.obliczSrednia(tablica));
+//        TabliceMetodyPomocnicze.znajdzMinOrazIndex(tablica);
+//TabliceMetodyPomocnicze.znajdzMaksOrazIndeks(tablica);
+
+
+
+        System.out.println("Podaj element ktory chcesz znalzc: ");
+        int element = sc.nextInt();
+
+
+TabliceMetodyPomocnicze.obliczIlePlusMinusZer(tablica);
+TabliceMetodyPomocnicze.zerujParzyste(tablica);
+
+
+
+
+
+
+    }
+
+}
+
+
+
