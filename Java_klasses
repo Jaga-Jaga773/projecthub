@@ -1,0 +1,136 @@
+package com.javadeveloper;
+
+public class TabliceOperacje {
+
+    public static int[] wyswietlTablice(int[] tab) {
+        int[] wyswietl = new int[tab.length];
+        System.out.println("Wyswietlone elementy: ");
+        for (int el : tab) {
+            System.out.println( el);
+        }
+return wyswietl;
+    }
+
+    public static int obliczSume(int[] tab) {
+        int suma = 0;
+        for (int el : tab) {
+            suma += el;
+        }
+        return suma;
+    }
+
+
+    public static int[] odwrocTablice (int[] tab) {
+        int[] odwrocony = new int[tab.length];
+        for (int i = tab.length-1; i >= 0; i--){
+            System.out.println( tab[i]);
+        }
+        return  odwrocony;
+    }
+
+    public static int  policzLiczbyPodzielnePrzezX (int[] tab, int x) {
+        int licznik = 0;
+        for(int i = 0; i < tab.length; i++){
+            if(tab[i] % x == 0){
+               licznik++;
+            }
+        }
+        return licznik;
+    }
+
+    public static int[]  przemnozTablicePrzezK(int[] tab, int k){
+        int[] przemnTab = new int[tab.length];
+
+        for (int i = 0; i < tab.length; i++ ){
+           przemnTab[i]  = tab[i] * k;
+        }
+
+        return przemnTab;
+    }
+
+  
+}
+
+
+class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int dlugosc;
+
+        do {
+            System.out.println("Podaj liczbe elementow tablicy (wiekszych od 0): ");
+
+            while (!sc.hasNextInt()) {
+                System.out.println("Blad! Musisz podac liczbe calkowita.");
+                sc.nextInt();
+            }
+
+            dlugosc = sc.nextInt();
+
+            if (dlugosc < 2) {
+                System.out.println("Blad! Tablica musi miec wiecej niz 2 elementy.");
+            }
+
+        } while (dlugosc <= 0);
+
+
+        int[] tablica = new int[dlugosc];
+        System.out.println("Podaj " + dlugosc + " elementow: ");
+
+        for (int i = 0; i < tablica.length; i++) {
+            while (!sc.hasNextInt()) {
+                System.out.println("Blad! Musisz podac calkowite elementy tablicy!");
+                sc.nextInt();
+            }
+            tablica[i] = sc.nextInt();
+        }
+
+
+        //Wyswitlenie elementow tablicy
+        TabliceOperacje.wyswietlTablice(tablica);
+
+        //Wyswietlenie sumy wszystkich elementow
+        int suma = TabliceOperacje.obliczSume(tablica);
+        System.out.println("Suma  elementow wynosi: " + suma);
+
+//Wyswietlenie odwroconej tablicy
+        System.out.println("Odwrocona tablica: ");
+        int[] odwrocony = TabliceOperacje.odwrocTablice(tablica);
+
+        //Zwracanie liczby elementow ktore sa podzielne przez x
+        System.out.println("Podaj liczbe calkowita x: ");
+
+        while (!sc.hasNextInt()) {
+            System.out.println("Blad! musisz podac liczbe calkowita. ");
+            sc.nextInt();
+        }
+
+        int x = sc.nextInt();
+
+        int licznik = TabliceOperacje.policzLiczbyPodzielnePrzezX(tablica, x);
+        System.out.println("Ilosc podzielnyc elementow przez x: " + licznik);
+
+
+        //Metoda pomnozenia elementa przez k
+        System.out.println("Podaj  liczbe k przez ktora chcesz pomnozyc kazdy element tablicy: ");
+
+        while (!sc.hasNextInt()) {
+            System.out.println("Blad! Musisz podac liczbe calkowita.");
+            sc.nextInt();
+        }
+        int k = sc.nextInt();
+        int[] przemnTab = TabliceOperacje.przemnozTablicePrzezK(tablica,k);
+        System.out.println("Przemnozona  tablica wynosi: ");
+      TabliceOperacje.wyswietlTablice(TabliceOperacje.przemnozTablicePrzezK(tablica, k));
+
+
+    }
+
+}
+
+
+
+
+
+
