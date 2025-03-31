@@ -1,0 +1,122 @@
+//        Scanner sc = new Scanner(System.in);
+//
+//        System.out.println("Podaj znak: ");
+//        char znak = sc.next().charAt(0);
+//
+//        System.out.println("Podaj liczbe znakow: ");
+//        int liczba = sc.nextInt();
+//
+//        for(int i = 1; i <= liczba; i++){
+//            for(int j = 0; j < i; j++){
+//                System.out.print(znak);
+//            }
+//            System.out.println();
+//        }
+//
+//        sc.close();
+
+    
+
+
+
+//
+//        System.out.println("Podaj znak: ");
+//        char znak = sc.next().charAt(0);
+//
+//        System.out.println("Podaj ilosc znakow: ");
+//        int ilosc = sc.nextInt();
+//
+//        int [] tab = new int[ilosc];
+//        for(int i = 0; i < tab.length; i++){
+//            for(int j = 0; j < tab.length; j++){
+//                System.out.print(znak);
+//            }
+//            System.out.println();
+//        }
+//
+//        sc.close();
+
+
+        //Zadanie 1
+//    int liczba;
+//    do {
+//        System.out.println("POdaj liczbe z przedzialu [0;18]: ");
+//        while(!sc.hasNextInt()){
+//            System.out.println("Blad!.Musisz podac liczbe calkowita!");
+//            sc.next();
+//        }
+//        liczba = sc.nextInt();
+//    }while(liczba < 0 || liczba > 18);
+//
+//    int ocena;
+//    if(liczba <= 10){
+//        ocena = 2;
+//    }
+//    else if (liczba <= 13){
+//        ocena = 3;
+//    }
+//    else if(liczba <= 16){
+//        ocena = 4;
+//    }
+//    else
+//        ocena = 5;
+//
+//        System.out.println("Ocena za kolokwium wynosi: " + ocena);
+//        sc.close();
+
+
+
+
+
+//
+//        System.out.print("Podaj liczbe calkowita a: ");
+//        while (!sc.hasNextDouble()) {
+//            System.out.println("Blad! Musisz podac liczbe. ");
+//            sc.next();
+//        }
+//       double a = sc.nextDouble();
+//
+//        System.out.print("Podaj kolejna liczbe b: ");
+//        while (!sc.hasNextDouble()){
+//            System.out.println("Blad! Musisz podac liczbe.");
+//            sc.next();
+//        }
+//        double b = sc.nextDouble();
+//
+//        System.out.print("Podaj znak o ( +, -, *, /): ");
+//
+//        char o = sc.next().charAt(0);
+//
+//        switch (o) {
+//            case '+':
+//                System.out.println("Suma wynosi: " + (a + b));
+//                break;
+//
+//            case '-':
+//                System.out.println("Roznica wynosi: " + (a - b));
+//                break;
+//
+//            case '*':
+//                System.out.println("Iloczyn wynosi: " + (a * b));
+//                break;
+//
+//            case '/':
+//                if( b == 0){
+//                    System.out.println("Operacja jest nieznana. Nie mozna dzielic przez zero!");
+//                    return;
+//                }
+//                System.out.println("Iloraz wynosi: " + (a / b));
+//                break;
+//            default:
+//                System.out.println("Operacja jest nieznana!");
+//
+//
+//        }
+//        sc.close();
+
+
+
+
+
+    }
+}
