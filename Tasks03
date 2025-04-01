@@ -1,0 +1,68 @@
+public class Programista {
+
+    private  String imie;
+    private  String nazwisko;
+    private String jezykPr;
+    private double pensja;
+
+    public Programista(String imie, String nazwisko, String jezykPr, double pensja) {
+this.imie = imie;
+this.nazwisko = nazwisko;
+this.jezykPr = jezykPr;
+this.pensja = pensja;
+
+    }
+
+    public String getImie () {
+        return imie;
+    }
+
+    public String getNazwisko() {
+        return nazwisko;
+    }
+
+    public String getJezykPr () {
+        return  jezykPr;
+    }
+
+    public double getPensja () {
+        return pensja;
+    }
+
+    public void setImie (String imie) {
+        this.imie = imie;
+    }
+    public void setNazwisko (String nazwisko) {
+        this.nazwisko = nazwisko;
+    }
+
+    public void setJezykPr (String jezykPr) {
+        this.jezykPr = jezykPr;
+    }
+
+    public void setPensja ( double nowaPensja) {
+        this.pensja = nowaPensja;
+    }
+
+    public String toString () {
+        return  "Imie: " + imie + ", Nazwisko: " + nazwisko + ", Jezyk programowania: " + jezykPr + ", Pensja: " + pensja;
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+Programista programista = new Programista("Mark", "Cukerberg", "Java", 7000);
+        System.out.println(programista.toString());
+
+        System.out.println("Dane z nowa pensja:  ");
+        programista.setPensja(8000);
+        System.out.println(programista.toString());
+
+
+
+
+
+    }
+}
+
