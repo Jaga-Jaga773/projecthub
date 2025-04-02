@@ -1,0 +1,131 @@
+package com.javadeveloper;
+
+import java.util.ArrayList;
+
+public class Komputer {
+     private final String model;
+     private final String procesor;
+     private  final  int ram;
+    private final int rok_produkcji;
+    private double cena;
+    private double dysk;
+    private static  double kursEuro;
+    private double[] dostepneRozmiaryDyskow;
+
+    public Komputer(String model, String procesor, int ram, int rok_produkcji, double cena, double dysk, double[] dostepneRozmiaryDyskow) {
+        this.model = model;
+        this.procesor = procesor;
+        this.ram = ram;
+        this.rok_produkcji = rok_produkcji;
+        this.cena = cena;
+        this.dysk = dysk;
+        this.dostepneRozmiaryDyskow = dostepneRozmiaryDyskow;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getProcesor() {
+        return procesor;
+    }
+
+    public int getRam() {
+        return ram;
+    }
+
+    public int getRok_produkcji() {
+        return rok_produkcji;
+    }
+
+    public double getCena() {
+        return cena;
+    }
+
+    public double getDysk() {
+        return dysk;
+    }
+
+    public static double getKursEuro() {
+        return kursEuro;
+    }
+
+    public double[] getDostepneRozmiaryDyskow() {
+        return dostepneRozmiaryDyskow;
+    }
+
+
+    public void setCena(double cena) {
+        this.cena = cena;
+    }
+
+    public void setDysk(double dysk) {
+        this.dysk = dysk;
+    }
+
+    public static void setKursEuro(double kursEuro) {
+        Komputer.kursEuro = kursEuro;
+    }
+
+
+    public void setDostepneRozmiaryDyskow(double[] dostepneRozmiaryDyskow) {
+        this.dostepneRozmiaryDyskow = dostepneRozmiaryDyskow;
+    }
+
+    public void ustawPojemnoscDyska (double pojemnoscDyska) {
+        if(pojemnoscDyska <= 0) System.out.println("Blad! Nie moze byc wartoscia ujemna lub 0");
+
+    }
+
+    public double podajCeneWEuro() {
+        return  cena/kursEuro;
+    }
+
+    public  void czyObslugujeRozmiarDysku (double[] dostepneRozmiaryDyskow){
+for ( double el: dostepneRozmiaryDyskow){
+    System.out.println(el);
+}
+
+    }
+
+
+
+public void  okreslWydajnoscNaProcesorze(String model) {
+        switch (model){
+            case "i3":
+                System.out.println("Slaba");
+                break;
+            case "i5":
+                System.out.println("Sriednia");
+                break;
+            case "i7":
+                System.out.println("Wysoka");
+                break;
+            case "i9":
+                System.out.println("Bardzo wysoka");
+                break;
+            default:
+                System.out.println("Podales bledne dane!");
+        }
+}
+
+public void ktoryNowszy(int rok_produkcji) {
+if(this.rok_produkcji < rok_produkcji){
+    System.out.println("Nowszy rok produkcji: " + this.rok_produkcji);
+}
+}
+
+
+public void wyswietlInformacje() {
+    System.out.println("Model komputera: " + model);
+    System.out.println("Procesor: " + procesor);
+    System.out.println("Ilosc Ram: " + ram);
+    System.out.println("Rok produkcji: " + rok_produkcji);
+    System.out.println("Cena: " + cena);
+    System.out.println("Pojemnosc dysku: " + dysk );
+    System.out.println("Dostepne rozmiary dyskow: " + dostepneRozmiaryDyskow);
+}
+
+
+
+}
