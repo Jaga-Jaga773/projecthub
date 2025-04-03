@@ -1,0 +1,184 @@
+package com.javadeveloper;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Komputer {
+     private final String model;
+     private final String procesor;
+     private  final  int ram;
+    private final int rok_produkcji;
+    private double cena;
+    private double dysk;
+    private static  double kursEuro;
+    private double[] dostepneRozmiaryDyskow;
+
+    public Komputer(String model, String procesor, int ram, int rok_produkcji, double cena, double dysk, double[] dostepneRozmiaryDyskow) {
+        this.model = model;
+        this.procesor = procesor;
+        this.ram = ram;
+        this.rok_produkcji = rok_produkcji;
+        this.cena = cena;
+        this.dysk = dysk;
+        this.dostepneRozmiaryDyskow = dostepneRozmiaryDyskow;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getProcesor() {
+        return procesor;
+    }
+
+    public int getRam() {
+        return ram;
+    }
+
+    public int getRok_produkcji() {
+        return rok_produkcji;
+    }
+
+    public double getCena() {
+        return cena;
+    }
+
+    public double getDysk() {
+        return dysk;
+    }
+
+    public static double getKursEuro() {
+        return kursEuro;
+    }
+
+    public double[] getDostepneRozmiaryDyskow() {
+        return dostepneRozmiaryDyskow;
+    }
+
+
+    public void setCena(double cena) {
+        this.cena = cena;
+    }
+
+    public void setDysk(double dysk) {
+        this.dysk = dysk;
+    }
+
+    public static void setKursEuro(double kursEuro) {
+        Komputer.kursEuro = kursEuro;
+    }
+
+
+    public void setDostepneRozmiaryDyskow(double[] dostepneRozmiaryDyskow) {
+        this.dostepneRozmiaryDyskow = dostepneRozmiaryDyskow;
+    }
+
+    public void ustawPojemnoscDyska (double pojemnoscDyska) {
+        if (pojemnoscDyska <= 0) {
+            System.out.println("Blad! Nie moze byc wartoscia ujemna lub 0");
+        } else {
+            this.dysk = pojemnoscDyska;
+            System.out.println("Pojemnosc dysku zostala ustawiona na " + pojemnoscDyska + " GB");
+
+        }
+    }
+
+    public double podajCeneWEuro() {
+        return  cena/kursEuro;
+    }
+
+    public  void czyObslugujeRozmiarDysku (double rozmiar){
+boolean obsluguje = false;
+for (double rozmiarDysku : dostepneRozmiaryDyskow){
+    if(rozmiarDysku == rozmiar){
+        obsluguje = true;
+        break;
+    }
+}
+if(obsluguje) {
+    System.out.println("Komputer obsluguje dysk o pojemnosci " + rozmiar + " GB");
+}else {
+    System.out.println("Komputer nie obsluguje dysku o pojemnosci " + rozmiar + " GB");
+}
+
+    }
+
+
+
+public void  okreslWydajnoscNaProcesorze(String model) {
+        switch (model){
+            case "i3":
+                System.out.println("Slaba");
+                break;
+            case "i5":
+                System.out.println("Sriednia");
+                break;
+            case "i7":
+                System.out.println("Wysoka");
+                break;
+            case "i9":
+                System.out.println("Bardzo wysoka");
+                break;
+            default:
+                System.out.println("Podales bledne dane!");
+        }
+}
+
+public Komputer ktoryNowszy(Komputer innyKomputer) {
+    if (this.rok_produkcji > innyKomputer.getRok_produkcji()) {
+        return this;
+    } else {
+        return innyKomputer;
+    }
+}
+
+public void wyswietlInformacje() {
+    System.out.println("Model komputera: " + model);
+    System.out.println("Procesor: " + procesor);
+    System.out.println("Ilosc Ram: " + ram);
+    System.out.println("Rok produkcji: " + rok_produkcji);
+    System.out.println("Cena: " + cena);
+    System.out.println("Pojemnosc dysku: " + dysk );
+    System.out.println("Dostepne rozmiary dyskow: " + Arrays.toString(dostepneRozmiaryDyskow));
+}
+
+
+}
+
+class Main {
+
+
+    public static void main(String[] args) {
+
+Komputer komputer = new Komputer("Dell Inspiron 15", "Intel core i7", 16 , 2023, 4500.00, 512.0,  new double[] {256., 512., 1024.} );
+Komputer komputer1 = new Komputer("HP Pavilion", "Intel Core i5", 8, 2022, 3000.00, 256.0, new double[] {256,512, 1024});
+
+Komputer.setKursEuro(4.18);
+        System.out.println("Cena komputera w Euro: " + komputer.podajCeneWEuro());
+
+        System.out.println("Czy komputer obsluguje dysk 512 GB?");
+        komputer.czyObslugujeRozmiarDysku(512);
+
+        System.out.println("Wydajnosc procesora i7: ");
+        komputer.okreslWydajnoscNaProcesorze("i7");
+
+komputer.ustawPojemnoscDyska(256.0);
+        System.out.println("Nowa pojemnosc dysku: " + komputer.getDysk() + " GB");
+
+        Komputer nowszyKomputer = komputer.ktoryNowszy(komputer1);
+        System.out.println("Nowszy komputer: " + nowszyKomputer.getModel());
+
+        komputer.wyswietlInformacje();
+
+
+
+
+
+
+    }
+
+}
+
+
+
+
