@@ -1,0 +1,45 @@
+package com.javadeveloper;
+
+public class modyfikujTablice {
+
+    public static int  modyfikowanaTab ( int[] tab, int n) {
+        int zmodefikowane = 0;
+        for(int i = 0;  i < tab.length; i++){
+            if(tab[i] > n){
+                tab[i] = tab[i] * tab[i];
+                zmodefikowane ++;
+            }
+           else if(tab[i] < n || tab[i] == n){
+                tab[i] = 0;
+                zmodefikowane ++;
+            }
+        }
+        return  zmodefikowane;
+    }
+
+}
+
+
+public static void main(String[] args) {
+int[] tablica = {4,8,9,2,1,3};
+int n = 7;
+
+
+
+
+int zmodefikowane = modyfikujTablice.modyfikowanaTab(tablica,  n);
+        System.out.println("Zmodyfikowana tabliva wynosi: " + zmodefikowane);
+
+        for(int el : tablica){
+            System.out.println(el);
+        }
+
+
+
+
+    }
+
+}
+
+
+
