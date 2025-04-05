@@ -1,0 +1,170 @@
+package com.javadeveloper;
+
+public class Smartfon {
+   private final String marka;
+   private final String model;
+   private final int pamiec_ram;
+   private final int rok_premiery;
+
+   private double cena;
+   private int pamiecWewnetrzna;
+   private int[] dostepneRozmiaryPamieci;
+
+   public static  double kursEuro;
+
+
+    public Smartfon(String marka, String model, int pamiec_ram, int rok_premiery, double cena, int pamiecWewnetrzna, int[] dostepneRozmiaryPamieci) {
+        this.marka = marka;
+        this.model = model;
+        this.pamiec_ram = pamiec_ram;
+        this.rok_premiery = rok_premiery;
+        this.cena = cena;
+        this.pamiecWewnetrzna = pamiecWewnetrzna;
+        this.dostepneRozmiaryPamieci = dostepneRozmiaryPamieci;
+    }
+
+    public String getMarka() {
+        return marka;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getPamiec_ram() {
+        return pamiec_ram;
+    }
+
+    public int getRok_premiery() {
+        return rok_premiery;
+    }
+
+    public double getCena() {
+        return cena;
+    }
+
+    public void setCena(double cena) {
+        this.cena = cena;
+    }
+
+    public int getPamiecWewnetrzna() {
+        return pamiecWewnetrzna;
+    }
+
+    public void setPamiecWewnetrzna(int pamiecWewnetrzna) {
+        this.pamiecWewnetrzna = pamiecWewnetrzna;
+    }
+
+    public int[] getDostepneRozmiaryPamieci() {
+        return dostepneRozmiaryPamieci;
+    }
+
+    public void setDostepneRozmiaryPamieci(int[] dostepneRozmiaryPamieci) {
+        this.dostepneRozmiaryPamieci = dostepneRozmiaryPamieci;
+    }
+
+    public static double getKursEuro() {
+        return kursEuro;
+    }
+
+    public static void setKursEuro(double kursEuro) {
+        Smartfon.kursEuro = kursEuro;
+    }
+
+    public void ustawPamiecWewnetrzna(int gb) {
+        this.pamiecWewnetrzna = gb;
+
+    }
+
+    public double podajCeneWEuro() {
+        return  cena/kursEuro;
+    }
+
+
+    public void czyObslugujePamiec(int gb){
+boolean obsluguje = false;
+for(int pamiec : dostepneRozmiaryPamieci){
+    if(pamiec == gb){
+        obsluguje = true;
+        break;
+    }
+}
+if(obsluguje) {
+    System.out.println("Komputer obsluguje  pamiec o pojemnisci: " + gb + " GB");
+}else {
+    System.out.println("Komputer  nie obsluguje  pamiec o pojemnisci:" + gb + " GB");
+}
+
+
+
+    }
+
+public int okreslWydajnosc(int wydajnosc) {
+   if(wydajnosc <= 4) System.out.println("Niska");
+   else if ( wydajnosc <= 8) System.out.println("Sriednia");
+   else System.out.println("Wysoka");
+return  wydajnosc;
+}
+
+
+public Smartfon ktoryNowszy(Smartfon inny) {
+    if(this.rok_premiery > inny.rok_premiery) {
+        return  this;
+    }
+    else {
+        return  inny;
+    }
+
+}
+
+
+public void  wyswietlInformacje() {
+    System.out.println("Marka: " + marka);
+    System.out.println("Model: " + model);
+    System.out.println("Ram: " + pamiec_ram);
+    System.out.println("Rok premiery: " + rok_premiery);
+    System.out.println("Cena: " + cena);
+    System.out.println("Pamiec wewnetrzna: " + pamiecWewnetrzna);
+    System.out.println("Dostepne rozmiary: " + dostepneRozmiaryPamieci);
+}
+
+
+}
+
+
+class Main {
+
+    public static void main(String[] args) {
+       Smartfon smartfon = new Smartfon("Samsung", "Galaxy S22", 8, 2022, 3999, 256, new int[] {128,256,512});
+Smartfon.setKursEuro(4.2);
+        System.out.println("Cena w euro: " + smartfon.podajCeneWEuro());
+
+        smartfon.czyObslugujePamiec(128);
+
+        smartfon.setPamiecWewnetrzna(512);
+        System.out.println("Pamiec wewnetrzna wynosi: " + smartfon.getPamiecWewnetrzna());
+
+        System.out.println("Wydajnodc: " );
+        System.out.println(smartfon.okreslWydajnosc(6));
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Marka: ");
+        String marka = sc.nextLine();
+        System.out.print("Model: ");
+        String model = sc.nextLine();
+        System.out.print("Pamiec: ");
+        int pamiec = sc.nextInt();
+        System.out.print("Rok premiery: ");
+        int rok = sc.nextInt();
+        System.out.print("Cena: ");
+        double cena = sc.nextDouble();
+        System.out.print("Pamiec wewnetrzna: ");
+        int pamiecWewnetrzna = sc.nextInt();
+        System.out.print("Dostepne rozmiary pamieci: ");
+        int[] ilosc = new int[3];
+        for(int i = 0; i < ilosc.length; i++){
+            ilosc[i] = sc.nextInt();
+        }
+
+  }
+}
